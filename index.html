@@ -12,42 +12,42 @@
     const VERSION_KEY = "webgl_version";
 
     try {
-      const res = await fetch("version.json", { cache: "no-store" });
+      const res = await fetch("Build/BuildInfo.json", { cache: "no-store" });
       if (!res.ok) {
-        console.warn("⚠️ 無法讀取 version.json，跳過版本檢查");
+        console.warn("⚠️ 無法讀取 StreamingAssets/BuildInfo.json，跳過版本檢查");
         return;
       }
 
-      const { version } = await res.json();
+      const { count } = await res.json();
       const localVersion = localStorage.getItem(VERSION_KEY);
 
       if (!localVersion) {
-        console.log(`🆕 第一次載入，儲存版本：${version}`);
-        localStorage.setItem(VERSION_KEY, version);
+        console.log(`🆕 第一次載入，儲存版本：${count}`);
+        localStorage.setItem(VERSION_KEY, count);
         location.reload(); // reload 確保使用最新版資源
         return;
       }
 
-      if (localVersion !== version) {
-        console.log(`🔁 偵測到版本變動 ${localVersion} → ${version}，清除 Unity 快取`);
+      if (localVersion !== count) {
+        console.log(`🔁 偵測到版本變動 ${localVersion} → ${count}，清除 Unity 快取`);
 
         try {
           const req = indexedDB.deleteDatabase("UnityCache");
           req.onsuccess = req.onerror = req.onblocked = () => {
             console.log("🧹 UnityCache 已清除");
-            localStorage.setItem(VERSION_KEY, version);
+            localStorage.setItem(VERSION_KEY, count);
             location.reload(); // reload 使用新版本
           };
         } catch (e) {
           console.warn("⚠️ 清除 IndexedDB 失敗，強制重載");
-          localStorage.setItem(VERSION_KEY, version);
+          localStorage.setItem(VERSION_KEY, count);
           location.reload();
         }
 
         return;
       }
 
-      console.log(`✅ 版本一致 [${version}]，繼續執行`);
+      console.log(`✅ 版本一致 [${count}]，繼續執行`);
 
     } catch (err) {
       console.warn("❌ 發生錯誤，跳過版本檢查", err);
@@ -119,7 +119,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Yu5h1 Studio",
         productName: "Virtual Chat Partner",
-        productVersion: "1.0.0",
+        productVersion: "0.0.1",
         showBanner: unityShowBanner,
       };
 
