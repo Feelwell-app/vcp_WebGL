@@ -67,10 +67,10 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <!-- <div id="unity-webgl-logo"></div> -->
         <!-- <div id="unity-fullscreen-button"></div> -->
-		<div id="reload-button">清除快取並重新載入 ⟳ </div>
-        <div id="unity-build-title">Virtual Chat Partner</div>
+		<!-- <div id="reload-button">清除快取並重新載入 ⟳ </div> -->
+        <!-- <div id="unity-build-title">Virtual Chat Partner</div> -->
       </div>
     </div>
 	
@@ -84,7 +84,7 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       <!-- var fullscreenButton = document.querySelector("#unity-fullscreen-button"); -->
       var warningBanner = document.querySelector("#unity-warning");
-	  var reloadButton = document.querySelector("#reload-button");
+	  <!-- var reloadButton = document.querySelector("#reload-button"); -->
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -166,11 +166,11 @@
                   <!-- document.makeFullscreen('unity-container'); -->
                 <!-- }; -->
 				
-				reloadButton.onclick = () => {
-					localStorage.removeItem('webgl_version'); 
-					indexedDB.deleteDatabase('UnityCache'); 
-					location.reload();
-                };
+				<!-- reloadButton.onclick = () => { -->
+					<!-- localStorage.removeItem('webgl_version');  -->
+					<!-- indexedDB.deleteDatabase('UnityCache');  -->
+					<!-- location.reload(); -->
+                <!-- }; -->
 				
 				    // ✅ 在 Unity 啟動後，監聽用戶觸控事件解鎖音訊
     document.addEventListener("click", () => {
