@@ -12,6 +12,10 @@
     <title>Unity WebGL Player | Virtual Chat Partner</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <!-- ========== Firebase SDK ========== -->
+    <!-- 使用 compat 版本以相容 jslib -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -67,12 +71,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/883c31948e15e021809dcb8f1818990f.loader.js";
+      var loaderUrl = buildUrl + "/eb280ccb54f2360a8ebbb138950275fd.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/9363d29e6c75618a7302cde7d4843d88.data",
-        frameworkUrl: buildUrl + "/9dbdf621649767b18bbfe5e6b84c5fd1.framework.js",
-        codeUrl: buildUrl + "/ad0c8637f843fc01d4c9c7c7523bcc52.wasm",
+        dataUrl: buildUrl + "/f60cb65b1cfd847cb117e29e0fe02002.data",
+        frameworkUrl: buildUrl + "/3d786d70f870ef5242bbf177fa56af61.framework.js",
+        codeUrl: buildUrl + "/c0f5ba313278fb1faf549ac0877947ff.wasm",
 		autoSyncPersistentDataPath: true,
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Yu5h1 Studio",
@@ -132,6 +136,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+				window.unityInstance = unityInstance;
                 loadingBar.style.display = "none";
                 <!-- fullscreenButton.onclick = () => { -->
                   <!-- unityInstance.SetFullscreen(1); -->

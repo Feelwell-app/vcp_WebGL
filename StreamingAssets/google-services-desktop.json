@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "934870018812",
-    "project_id": "vcp-cdn",
-    "storage_bucket": "vcp-cdn.firebasestorage.app"
+    "project_number": "838614241182",
+    "project_id": "virtual-chat-partner",
+    "storage_bucket": "virtual-chat-partner.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:934870018812:android:3e6db0ea5dad29a2910579",
+        "mobilesdk_app_id": "1:838614241182:android:cc896deb7fe73cc010508f",
         "android_client_info": {
           "package_name": "com.Yu5h1Studio.VirtualChatPartner"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "838614241182-ctuprg3ovs0mmoocv5c2lbqc7v7299b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBjMjUyuLQdbBiLsVziKKRlLZcRHljhVK8"
+          "current_key": "AIzaSyBeIY3rYgqrsKHZK8BH_wBLAQ-3cnPv1Xk"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838614241182-ctuprg3ovs0mmoocv5c2lbqc7v7299b6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
